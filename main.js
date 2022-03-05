@@ -1,9 +1,34 @@
 import _ from 'lodash'
-import getType from './getType'
-// import {random, user as heropy} from './getRandom'
-import * as R from './getRandom'
 
-console.log(_.camelCase('the hello world'))
-console.log(getType([1,2,3]))
-// console.log(random(),random())
-console.log(R)
+const usersA = [
+  { userId: '1', name: 'HEROPY'},
+  { userId: '2', name: 'Neo'},
+]
+
+const usersB = [
+  { userId: '1', name: 'HEROPY'},
+  { userId: '3', name: 'Amy'},
+]
+
+const usersC = usersA.concat(usersB)
+console.log('concat', usersC)
+console.log('uniqBy',_.uniqBy(usersC, 'userId'))
+
+const usersD = _.unionBy(usersA, usersB, 'userId')
+console.log('unionBy', usersD)
+
+const users =[
+  {userId: '1',name:'HEROPY'},
+  {userId: '2',name:'Neo'},
+  {userId: '3',name:'Amy'},
+  {userId: '4',name:'Evan'},
+  {userId: '5',name:'Lewis'},
+]
+
+const foundUser = _.find(users, {name: 'Amy'})
+const foundUserIndex = _.findIndex(users, {name: 'Amy'})
+console.log(foundUser)
+console.log(foundUserIndex)
+
+_.remove(users, {name: 'HEROPYT'})
+console.log(users)
