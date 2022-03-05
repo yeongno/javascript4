@@ -1,34 +1,23 @@
-import _ from 'lodash'
+//JSON (JavaScript Object Notation)
+//자바스크립트의 객체 표기법
 
-const usersA = [
-  { userId: '1', name: 'HEROPY'},
-  { userId: '2', name: 'Neo'},
-]
+import myData from './myData.json'
 
-const usersB = [
-  { userId: '1', name: 'HEROPY'},
-  { userId: '3', name: 'Amy'},
-]
+console.log(myData)
 
-const usersC = usersA.concat(usersB)
-console.log('concat', usersC)
-console.log('uniqBy',_.uniqBy(usersC, 'userId'))
+const user ={
+  name: 'HEROPY',
+  age: 85,
+  emails:[
+    'thesecon@gamil.com',
+    'neo@zillinks.com'
+  ]
+}
+console.log('user',user)
 
-const usersD = _.unionBy(usersA, usersB, 'userId')
-console.log('unionBy', usersD)
+const str = JSON.stringify(user)
+console.log('str',str)
+console.log(typeof str)
 
-const users =[
-  {userId: '1',name:'HEROPY'},
-  {userId: '2',name:'Neo'},
-  {userId: '3',name:'Amy'},
-  {userId: '4',name:'Evan'},
-  {userId: '5',name:'Lewis'},
-]
-
-const foundUser = _.find(users, {name: 'Amy'})
-const foundUserIndex = _.findIndex(users, {name: 'Amy'})
-console.log(foundUser)
-console.log(foundUserIndex)
-
-_.remove(users, {name: 'HEROPYT'})
-console.log(users)
+const obj =JSON.parse(str)
+console.log('obj', obj)
