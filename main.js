@@ -1,18 +1,13 @@
-const user ={
-  name: 'HEROPY',
-  age: 85,
-  emails:[
-    'thesecon@gamil.com',
-    'neo@zillinks.com'
-  ]
+import axios from 'axios'
+function fetchMovies(){
+  axios
+  .get('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')//https로 요청할 것
+  .then(res=>{
+    console.log(res)
+    const h1El = document.querySelector('h1')
+    const imgEl = document.querySelector('img')
+    h1El.textContent = res.data.Search[0].Title
+    imgEl.src = res.data.Search[0].Poster
+  })
 }
-
-//localStorage.setItem('user', JSON.stringify(user))
-// console.log(JSON.parse(localStorage.getItem('user')))
-// localStorage.removeItem('user')
-
-const str = localStorage.getItem('user')
-const obj = JSON.parse(str)
-obj.age = 22
-console.log(obj)
-localStorage.setItem('user',JSON.stringify(obj))
+fetchMovies()
