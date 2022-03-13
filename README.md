@@ -1,3 +1,1 @@
-#  fastcampus part5.2
-
-## ts
+#  fastcampus part5.2!
