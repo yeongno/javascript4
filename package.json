@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/yeongno/javascript4#readme",
   "devDependencies": {
+    "@types/react": "^17.0.40",
     "parcel-bundler": "^1.12.5",
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "react": "^17.0.2"
   }
 }

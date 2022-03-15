@@ -1,1 +1,1 @@
-const ab: number = undefined;
+const hello =()=>{};
